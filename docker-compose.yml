@@ -1,0 +1,28 @@
+services:
+  connector:
+    build: .
+    restart: unless-stopped
+    env_file: ${ENV_FILE:-.env}
+    environment:
+      HOST: 0.0.0.0
+      PORT: 3000
+    ports:
+      - "127.0.0.1:${PORT:-3000}:3000"
+    volumes:
+      - connector-data:/app/data
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:3000/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  connector-data:
