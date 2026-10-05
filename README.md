@@ -120,3 +120,7 @@ Configure the MONA Pay webhook URL as `https://your-domain/webhooks/monapay`. Ru
 ## License
 
 MIT
+
+**MONA Pay is part of MONA Cloud by The MONA Group.**
+
+**MONA Pay thuộc bộ MONA Cloud của The MONA Group.**
