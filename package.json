@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "description": "Connector xac nhan chuyen khoan ngan hang tu dong giua Sapo Web va MONA Pay",
   "type": "module",
-  "main": "dist/server.js",
+  "main": "dist/src/server.js",
   "scripts": {
     "dev": "npm run build && node --watch dist/src/server.js",
     "build": "tsc -p tsconfig.json",
-    "start": "node dist/server.js",
+    "start": "node dist/src/server.js",
     "test": "npm run build && node --test dist/tests/*.test.js",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "setup:webhook": "npm run build && node dist/scripts/register-sapo-webhook.js"
